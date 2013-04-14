@@ -26,11 +26,11 @@ The `PID` class can either be initialized with the kp/ki/kd values, or tuned aft
 
 ``` ruby
 pid1 = PID.new :kp => 1.0, :ki => 1.0, :kd => 1.0
-pid1.setpoint = 200.0
+pid1.setpoint = 200.0 # Target temperature in Fahrenheit
 
 pid2 = PID.new
 pid2.tune 1.0, 1.0, 1.0
-pid2.setpoint = 200.0
+pid2.setpoint = 200.0 # Target temperature in Fahrenheit
 ```
 Once created, the heart of the PID library is in the `PID#control` method.  Pass this method the
 current temperature, and it will use the modified PID algorithm to output a power level.  Use 
